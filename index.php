@@ -18,6 +18,19 @@ if (!defined(UPG_NAME)) {
 if (UPG_ICON !== "None") {
     echo "<link rel='icon' href='". UPG_ICON."'>";
 }
+if (!file_exists('themes/'. UPG_THEME .'.css')) {
+    echo "UPG: Missing theme, find available themes in themes/";
+    exit;
+} else {
+    echo '<link rel="stylesheet" href="themes/'. UPG_THEME .'.css">';
+}
 if (!isset($_GET['site'])){
-    
+    echo '</head>';
+    if (!file_exists('pages/default.md')) {
+        echo 'UPG: Missing pages/default.php, Missing "site" variable in GET';
+        exit;
+    }
+    upgParse('pages/default.md');
+} else {
+    upgParse($_GET['site']);
 }
