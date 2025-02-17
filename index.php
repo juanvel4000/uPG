@@ -30,7 +30,16 @@ if (!isset($_GET['site'])){
         echo 'UPG: Missing pages/default.php, Missing "site" variable in GET';
         exit;
     }
+    echo '<body>';
     upgParse('pages/default.md');
+    echo '</body>';
 } else {
+    echo '</head>';
+    if (!file_exists($_GET['site'])){
+        echo "UPG: Missing ". $_GET['site'];
+        exit;
+    }
+    echo '<body>';
     upgParse($_GET['site']);
+    echo '</body>';
 }
