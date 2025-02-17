@@ -1,4 +1,8 @@
 <?php
+// Part of uPG
+// Thanks to bootswatch for the bootstrap themes
+// thanks to parsedown for the markdown parser
+
 echo '<html>
 <head>
 <script src="depends/bootstrap.bundle.min.js"></script>';

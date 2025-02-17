@@ -1,1 +1,2 @@
-# Welcome to my uPG default.md Website!
+# Start customizing this website
+open pages/default.md and modify it using Markdown
