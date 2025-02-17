@@ -24,6 +24,15 @@ if (!file_exists('themes/'. UPG_THEME .'.css')) {
 } else {
     echo '<link rel="stylesheet" href="themes/'. UPG_THEME .'.css">';
 }
+function upgParse($file){
+    // assuming this file exists
+    $Parsedown = new Parsedown();
+    $text = file_get_contents($file);
+    $result = $Parsedown->setSafeMode(true);
+    $output = $Parsedown->text($text);
+    echo $output;
+    
+}
 if (!isset($_GET['site'])){
     echo '</head>';
     if (!file_exists('pages/default.md')) {
